@@ -1,0 +1,13 @@
+.nav{
+    display: flex;
+    background: #000;
+    padding: 10px;
+    justify-content: space-around;
+    
+}
+
+
+.link{
+    color:#fff
+}
+
