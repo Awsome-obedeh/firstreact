@@ -6,7 +6,15 @@
   align-items: center;
 }
 
-.container > div{
+.container{
   background-color: hotpink;
 }
-
+.container  > div:nth-child(3){
+  background: #fff;
+  transition:  all 2s ease-out ;
+  
+}
+.container  > div:nth-child(3):hover{
+  
+  transform: scale(1.1 );  
+}
