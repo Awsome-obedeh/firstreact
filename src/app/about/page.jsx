@@ -1,4 +1,5 @@
-import Navbar from "@/componets/navbar/page"
+
+import Product from "@/componets/product/page"
 
 export default function About(){
     return(
@@ -6,7 +7,11 @@ export default function About(){
         <>  
        
         <h1>this is the about page</h1>
-        
+        <Product
+
+        name="about products"
+        price="10.00"
+        img="/Capture.PNG"/>
         </>
     )
 }
