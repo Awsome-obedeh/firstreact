@@ -18,3 +18,32 @@
   
   transform: scale(1.1 );  
 }
+
+.products{
+  display: flex;
+  justify-content: space-evenly;
+  gap:1rem;
+  margin-top: 2rem;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.discount::after{
+  content: "%";
+}
+.discount::before{
+  content: "-";
+}
+
+.discount{
+  position: absolute;
+  top:10px;
+  right:10px;
+  background-color: orange;
+  color:black;
+  padding: 10px;
+  border-radius: 10px;
+}
+.con{
+  position: relative;
+}
