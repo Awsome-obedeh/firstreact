@@ -71,7 +71,7 @@ let products = [
     discountPercentage: 17.91,
     isDiscounted: false,
     rating: 4.3,
-    stock: 123,
+    stock: 124,
     brand: "OPPO",
     category: "smartphones",
     thumbnail: "https://images.unsplash.com/photo-1613688270362-8b26189c0782?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBob25lc3xlbnwwfHwwfHx8MA%3D%3D",
