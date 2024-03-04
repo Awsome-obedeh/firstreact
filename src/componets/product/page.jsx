@@ -1,6 +1,7 @@
 "use client"
+import axios from "axios";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
@@ -25,8 +26,30 @@ export default function Product(props){
            </div>
             
             <Image src={props.img} width={300} height={300} alt='deku'/>
+
+            <Blogpost/>
             
         </>
+    )
+}
+
+export function Blogpost(){
+    const [blogs,setBlog]=useState([]);
+  async function getBlogPost(){
+        const res=await axios.get('https://jsonplaceholder.typicode.com/posts');
+        console.log(res.data)
+        // set blog state to res.data
+        setBlog(res.data)
+        
+    }
+    useEffect(()=>{
+        getBlogPost()
+        
+    }, [])
+    // console.log(blogs)
+    return(
+       
+        <h1>My blog</h1>
     )
 }
 

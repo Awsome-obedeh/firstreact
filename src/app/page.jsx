@@ -173,7 +173,7 @@ export default function Home() {
           
         products.map((product)=>{
           return(
-            <div className={styles.con}>
+            <div className={styles.con} key={product.id}>
               < Image src={product.thumbnail} width={300} height={400} alt={product.title}/>
               <p>{product.title}</p>
               <small>$ {product.price}</small>
