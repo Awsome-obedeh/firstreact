@@ -1,10 +1,11 @@
 
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './page.module.css'
 import { Poppins } from 'next/font/google'
 import { MdOutlineSend } from "react-icons/md";
 import { BsSendExclamation } from "react-icons/bs";
+
  
 const roboto = Poppins({
   weight: '400',
@@ -13,6 +14,10 @@ const roboto = Poppins({
 })
 
 export default function Form() {
+    // set error message state
+   const [errMsg, setErrMsg]=useState('')
+
+    // s
     function handleSubmit(e){
         console.log(e)
         // prevent sdefault form submission
@@ -25,11 +30,40 @@ export default function Form() {
         let phone= e.target[4].value
         username='@'+username   
         console.log(username, email, phone)
+        //  validation
+        if(!username){
+            setErrMsg("firstname cannot be empty")
+        }   
+        else if(!lastname){
+            setErrMsg("lastname cannot be empty")
+        }   
+        else if(!email){
+            setErrMsg("email cannot be empty")
+        }   
+        else if(!phone){
+            setErrMsg("phone cannot be empty")
+        }   
 
     }
     return (
         <div className={styles.container}>
             <form action="" className={styles.form} onSubmit={handleSubmit}>
+
+               
+                {/* conditional rendering using conditionals */}
+                {
+                  errMsg && <div className={styles.err}>
+                    <p>{errMsg}</p>
+                </div> 
+                }
+
+                {/* conditional rendering using tenary */}
+                {
+                  errMsg ? <div className={styles.err}>
+                    <p>{errMsg}</p>
+                </div> : ''
+                }
+                
                 <div className={styles.formGroup}>
                    
                     <label htmlFor="" className={`${styles.formLabel} ${roboto.className}`}>Username</label>
